@@ -1,4 +1,4 @@
-[![Travis-CI Build Status](https://travis-ci.org/sewardlee337/finreportr.svg?branch=master)](https://travis-ci.org/sewardlee337/finreportr)
+[![Travis-CI Build Status](https://travis-ci.org/sewardlee337/finreportr.svg?branch=master)](https://travis-ci.org/sewardlee337/finreportr) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/finreportr)](https://cran.r-project.org/package=finreportr) 
 
 # finreportr - Financial Data from U.S. Securities and Exchange Commission
 
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-A financial analyst's time is valuable – it shouldn't be wasted doing manual data entry. finreportr is a web scraper written in R that allows analysts to query data from the U.S. Securities and Exchange Commission directly from the R console.  It aims to eliminate time wasters from a financial analyst's workflow, such as navigating the SEC EDGAR database, flipping through financial reports, and parsing XBRL-encoded data.
+A financial analyst's time is valuable – it shouldn't be wasted performing manual data entry. finreportr is a web scraper written in R that allows analysts to query data from the U.S. Securities and Exchange Commission directly from the R console.  It aims to eliminate time wasters from a financial analyst's workflow, such as navigating the SEC EDGAR database, flipping through financial reports, and parsing XBRL-encoded data.
 
 finreportr allows you to fetch data from the SEC and load it into your workspace using the following commands:
 * `CompanyInfo()`: returns basic information about a company
@@ -15,6 +15,18 @@ finreportr allows you to fetch data from the SEC and load it into your workspace
 * `GetIncome()`: returns the income statement for a given company
 * `GetBalanceSheet()`: returns the balance sheet for a given company
 * `GetCashFlow()`: returns the cash flow statement for a given company
+
+To install CRAN release version of finreportr:
+
+```
+install.packages("finreportr")
+```
+
+To install bleeding-edge version from GitHub:
+
+```
+devtools::install_github("sewardlee337/finreportr")
+```
 
 ## CompanyInfo()
 
@@ -57,7 +69,7 @@ where
 `AnnualReports()` returns a dataframe that summarizes a given company's annual reports based on its stock ticker symbol. Information returned include:
 * Filing Name
 * Filing Date
-* [Accession Number] (http://www.sec.gov/investor/pubs/edgarguide.htm#P158_19972)
+* [Accession Number] (https://www.sec.gov/investor/pubs/edgarguide.htm#P158_19972)
 
 `AnnualReports()` will return data relating to a company's [Form 10-Ks](http://www.investopedia.com/terms/1/10-k.asp) if the company is domestic, and [Form 20-Fs](http://www.investopedia.com/terms/s/sec-form-20-f.asp) if the company is foreign. 
 
