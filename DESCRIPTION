@@ -1,8 +1,8 @@
 Package: finreportr
 Type: Package
 Title: Financial Data from U.S. Securities and Exchange Commission
-Version: 1.0.1
-Date: 2016-10-30
+Version: 1.0.2
+Date: 2020-06-12
 Author: Seward Lee
 Maintainer: Seward Lee <sewardlee337@gmail.com>
 Description: Download and display company financial data from the U.S. Securities
@@ -13,11 +13,13 @@ Description: Download and display company financial data from the U.S. Securitie
 Depends: R (>= 2.10)
 Imports: xml2, dplyr, httr, rvest, XBRL, curl
 License: MIT + file LICENSE
+LazyData: true
 URL: https://github.com/sewardlee337/finreportr
-RoxygenNote: 5.0.1
+BugReports: https://github.com/sewardlee337/finreportr/issues
+RoxygenNote: 7.1.0
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2016-10-31 05:21:10 UTC; Seward
+Packaged: 2020-06-13 05:50:40 UTC; seward
 Repository: CRAN
-Date/Publication: 2016-10-31 07:57:04
+Date/Publication: 2020-06-13 06:10:02 UTC

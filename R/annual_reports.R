@@ -8,16 +8,18 @@
 #' @param foreign A logical vector indicating whether the company is domestic or foreign. \code{foreign = FALSE} by default.
 #' @examples
 #' AnnualReports("TSLA")
-#' AnnualReports("HTHIY", foreign = TRUE)
+#' AnnualReports("BABA", foreign = TRUE)
 
 AnnualReports <- function(symbol, foreign = FALSE) {
      
      options(stringsAsFactors = FALSE)
      
      if(foreign == FALSE) {
-          url <- paste0("http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=", symbol, "&type=10-k&dateb=&owner=exclude&count=100")
+          url <- paste0("http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=", 
+                        symbol, "&type=10-k&dateb=&owner=exclude&count=100")
      } else {
-          url <- paste0("http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=", symbol, "&type=20-f&dateb=&owner=exclude&count=100")
+          url <- paste0("http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=", 
+                        symbol, "&type=20-f&dateb=&owner=exclude&count=100")
      }
      
      filings <- xml2::read_html(url)
@@ -50,6 +52,7 @@ AnnualReports <- function(symbol, foreign = FALSE) {
           substr(1, 20)
      
      ##   Create dataframe
-     info.df <- data.frame(filing.name = filing.name, filing.date = filing.date, accession.no = accession.no)
+     info.df <- data.frame(filing.name = filing.name, filing.date = filing.date, 
+                           accession.no = accession.no)
      return(info.df)
 }
